@@ -6,16 +6,30 @@ using namespace std;
 
 //test
 
+void dessineRectangle(int l, int h)
+{
+    for(int ligne = 0; ligne < h; ligne++)
+    {
+        for(int colonne = 0; colonne < l; colonne++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
-    //Variables init
-    double nb1 = 0, nb2 = 0;
+    
+    int l = 0, h = 0;
 
-    cout << "Nombre 1 :" << endl;
-    cin >> nb1;
+    cout << "Largeur : ";
+    cin >> l;
 
-    cout << "Nombre 2 :" << endl;
-    cin >> nb2;
+    cout << "Hauteur : ";
+    cin >> h;
 
-    cout << nb1 << " ^ " << nb2 << " = " << pow(nb1, nb2) << endl;
+    dessineRectangle(l, h);
+
+    return 0;
 }
