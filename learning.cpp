@@ -6,22 +6,31 @@ using namespace std;
 
 //test
 
-void dessineRectangle(int l, int h)
+void dessineRectangle(int l, int h, char fill)
 {
-    for(int ligne = 0; ligne < h; ligne++)
+    if(l >= 0 && h >= 0)
     {
-        for(int colonne = 0; colonne < l; colonne++)
+        for(int ligne = 0; ligne < h; ligne++)
         {
-            cout << "*";
+            for(int colonne = 0; colonne < l; colonne++)
+            {
+                cout << fill;
+            }
+            cout << endl;
         }
-        cout << endl;
     }
+    else
+    {
+        cout << "La largeur et la hauteur doivent étre positif.";
+    }
+    
 }
 
 int main()
 {
     
     int l = 0, h = 0;
+    char fill = '*';
 
     cout << "Largeur : ";
     cin >> l;
@@ -29,7 +38,10 @@ int main()
     cout << "Hauteur : ";
     cin >> h;
 
-    dessineRectangle(l, h);
+    cout << "Remplissage : ";
+    cin >> fill;
+
+    dessineRectangle(l, h, fill);
 
     return 0;
 }
